@@ -25,8 +25,8 @@ def notice_message(token, channel, attachments):
         data={"channel": channel,  "attachments": attachments}) # 봇 메세지 외부 내용
     
 # Token 변수 할당
-my_workspace_tkn = 'xoxb-8402213644626-8425323729872-UVX0hJlQdfYSe2Pi5FRzSLXq'
-des_workspace_tkn ='xoxb-952532755684-8408966260854-UhtOkJuTdPblBbPyX6o2WNa0'
+my_workspace_tkn = 'xoxb-8402213644626-8425323729872-eGFg8UQBg4gDffnk5TMCdK71'
+des_workspace_tkn ='xoxb-952532755684-8408966260854-7S1u7HCEqeKk9z7wNQ5d6y7S'
 
 
 #### Slack 관련 정보 입력
