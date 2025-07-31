@@ -34,6 +34,10 @@ def create_driver():
     options.add_argument("lang=ko_KR")    # 가짜 플러그인 탑재
     options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36')  # user-agent 이름 설정
     
+    options.add_argument("enable-automation")
+    options.add_argument("--disable-infobars")
+    options.add_argument("--disable-dev-shm-usage")
+
     # 크롬드라이버 자동 업데이트
     service = Service(executable_path=ChromeDriverManager().install())
     
