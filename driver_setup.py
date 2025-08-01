@@ -36,8 +36,9 @@ def create_driver():
     
     options.add_argument("start-maximized")
     options.add_argument("enable-automation")
-    options.add_argument("--disable-infobars")
-    options.add_argument("--disable-dev-shm-usage")
+    #options.add_argument("--disable-infobars")
+    #options.add_argument("--disable-dev-shm-usage")
+    ## test 250801
 
 
     # 크롬드라이버 자동 업데이트
