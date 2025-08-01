@@ -10,18 +10,9 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      # 1. 저장소의 최신 코드를 Runner로 가져옵니다.
-      - name: Checkout code
+      - name: Checkout code to server
         uses: actions/checkout@v4
         with:
-          repository: QA # 저장소 이름
-          ref: DCR # 브랜치 이름
-          token: ${{ secrets.GITHUB_TOKEN }} # 기본 토큰 사용
-      - name: Pull the latest code
-        run: |
-          set -x # 모든 명령어 출력
-          whoami
-          cd /home/ywj/QA
-          git status
-          git pull origin DCR
-          git log -1
+          repository: ywj/QA
+          ref: DCR
+          path: /home/ywj/QA # 이 부분을 추가하여 코드를 원하는 경로에 가져오도록 합니다.
