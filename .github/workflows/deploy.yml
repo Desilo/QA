@@ -14,9 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            cd /home/ywj/QA
-            git pull origin DCR
+          repository: QA # 저장소 이름
+          ref: DCR # 브랜치 이름
+          token: ${{ secrets.GITHUB_TOKEN }} # 기본 토큰 사용
+      - name: Pull the latest code
+        run: |
+          cd /home/ywj/QA
+          git pull origin DCR
