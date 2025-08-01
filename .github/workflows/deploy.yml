@@ -19,5 +19,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }} # 기본 토큰 사용
       - name: Pull the latest code
         run: |
+          set -x # 모든 명령어 출력
+          whoami
           cd /home/ywj/QA
+          git status
           git pull origin DCR
+          git log -1
