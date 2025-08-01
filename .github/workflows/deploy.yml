@@ -13,6 +13,6 @@ jobs:
       - name: Checkout code to server
         uses: actions/checkout@v4
         with:
-          repository: ywj/QA
+          repository: Desilo/QA
           ref: DCR
           #path: /home/ywj/QA # 이 부분을 추가하여 코드를 원하는 경로에 가져오도록 합니다.
