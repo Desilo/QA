@@ -32,8 +32,8 @@ load_dotenv(dotenv_path = env_path)
 my_workspace_tkn = os.getenv("MY_WORKSPACE_TOKEN")
 des_workspace_tkn = os.getenv("DES_WORKSPACE_TOKEN")
 
-print("MY_WORKSPACE_TOKEN:", os.getenv("MY_WORKSPACE_TOKEN"))
-print("DES_WORKSPACE_TOKEN:", os.getenv("DES_WORKSPACE_TOKEN"))
+#print("MY_WORKSPACE_TOKEN:", os.getenv("MY_WORKSPACE_TOKEN"))
+#print("DES_WORKSPACE_TOKEN:", os.getenv("DES_WORKSPACE_TOKEN"))
 
 if not my_workspace_tkn or not des_workspace_tkn:
     raise EnvironmentError("Slack 토큰이 환경변수에서 불러와지지 않았습니다. .env 파일과 load_dotenv() 호출을 확인하세요.")
@@ -370,7 +370,6 @@ def main():
             }
             
         attach_list = [attach_dict]
-        log_message('info', attach_list)
 
         notice_message(token, channel, attach_list)
         log_message("info", "Slack 메세지 전송 완료")
