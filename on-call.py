@@ -63,7 +63,7 @@ import requests
 import json
 from datetime import datetime, timedelta
 import os
-from from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 # 메시지를 보내는 부분. 함수 안 argument 순서 :
 # token : Slack Bot의 토큰
