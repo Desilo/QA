@@ -912,8 +912,7 @@ des_workspace_tkn = os.getenv("DES_WORKSPACE_TOKEN")
 
 
 if not my_workspace_tkn or not des_workspace_tkn:
-    raise EnvironmentError("Slack 토큰이 환경변수에서 불러와지지 않았습니다. .env 파일과 load_dotenv() 호출
-을 확인하세요.")
+    raise EnvironmentError("Slack 토큰이 환경변수에서 불러와지지 않았습니다. .env 파일과 load_dotenv() 호출을 확인하세요.")
 
 #### Slack 관련 정보 입력
 
