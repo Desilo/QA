@@ -42,7 +42,7 @@ today_date
 import sys
 import logging
 
-log_path = 'C:/Users/WoojaeYang/Desktop/auto/logs/'  
+log_path = '/home/ywj/venv-auto/dcr_e2e/logs/'  
 
 # 로그 파일 경로 설정
 LOG_FILE = f"{log_path}dcr_e2e_logs.txt"
