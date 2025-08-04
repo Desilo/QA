@@ -75,7 +75,7 @@ import time
 
 
 #기본 설정
-result_path = 'C:/Users/WoojaeYang/Desktop/auto/result/'
+#result_path = 'C:/Users/WoojaeYang/Desktop/auto/result/'
 
 rdint = rd.randint(2,5)
 options = Options()
@@ -270,7 +270,7 @@ def check_page_0():
 import sys
 import logging
 
-log_path = 'C:/Users/WoojaeYang/Desktop/auto/logs/'  
+log_path = '/home/ywj/venv-auto/mi_e2e/logs/'  
 
 # 로그 파일 경로 설정
 LOG_FILE = f"{log_path}MI_etf_slack_notice_log.txt"
