@@ -884,6 +884,8 @@ def scene_11(driver, wait, provider, admin, project):
 import requests
 import json
 from datetime import datetime, timedelta
+import os
+from from dotenv import load_dotenv
 
 # 메시지를 보내는 부분. 함수 안 argument 순서
 # token : Slack Bot의 토큰
@@ -896,7 +898,11 @@ def notice_message(token, channel, attachments):
     response = requests.post("https://slack.com/api/chat.postMessage",
         headers={"Authorization": "Bearer "+token},
         data={"channel": channel,  "attachments": attachments}) # 봇 메세지 외부 내용
-    
+
+# __file__ 기준으로 slack_tokens.env 경로 지정
+env_path = os.path.join(os.path.dirname(__file__), 'slack_tokens.env')
+load_dotenv(dotenv_path=env_path)
+
 # Token 변수 할당
 my_workspace_tkn = os.getenv("MY_WORKSPACE_TOKEN")
 des_workspace_tkn = os.getenv("DES_WORKSPACE_TOKEN")
