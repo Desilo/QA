@@ -25,8 +25,8 @@ def notice_message(token, channel, attachments):
         headers={"Authorization": "Bearer "+token},
         data={"channel": channel,  "attachments": attachments}) # 봇 메세지 외부 내용
 
-env_path = os.path.join(os.path.dirname(__file__), 'slack_tokens.env')
-load_dotenv(dotenv_path = env_path)
+#env_path = os.path.join(os.path.dirname(__file__), 'slack_tokens.env') # __file__ 기준으로 slack_tokens.env 경로 지정
+load_dotenv(dotenv_path="/home/ywj/venv-auto/slack_tokens.env") # 절대경로 지정
 
 # Token 변수 할당
 my_workspace_tkn = os.getenv("MY_WORKSPACE_TOKEN")
