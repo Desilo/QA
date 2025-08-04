@@ -7,10 +7,11 @@ Created on Mon Feb 17 10:36:41 2025
 
 #%% ########################## slack ##########################
 
-
+import os
 import requests
 import json
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
 
 # 메시지를 보내는 부분. 함수 안 argument 순서 :
 # token : Slack Bot의 토큰
@@ -23,11 +24,19 @@ def notice_message(token, channel, attachments):
     response = requests.post("https://slack.com/api/chat.postMessage",
         headers={"Authorization": "Bearer "+token},
         data={"channel": channel,  "attachments": attachments}) # 봇 메세지 외부 내용
-    
-# Token 변수 할당
-my_workspace_tkn = '{토큰입력}'
-des_workspace_tkn ='{토큰입력}'
 
+env_path = os.path.join(os.path.dirname(__file__), 'slack_tokens.env')
+load_dotenv(dotenv_path = env_path)
+
+# Token 변수 할당
+my_workspace_tkn = os.getenv("MY_WORKSPACE_TOKEN")
+des_workspace_tkn = os.getenv("DES_WORKSPACE_TOKEN")
+
+print("MY_WORKSPACE_TOKEN:", os.getenv("MY_WORKSPACE_TOKEN"))
+print("DES_WORKSPACE_TOKEN:", os.getenv("DES_WORKSPACE_TOKEN"))
+
+if not my_workspace_tkn or not des_workspace_tkn:
+    raise EnvironmentError("Slack 토큰이 환경변수에서 불러와지지 않았습니다. .env 파일과 load_dotenv() 호출을 확인하세요.")
 
 #### Slack 관련 정보 입력
 
@@ -114,7 +123,7 @@ def log_in():
 
  
 #%%  ########################## Page 1 ##########################
-import pyautogui
+#import pyautogui
 
 new_result = []
 
@@ -361,6 +370,7 @@ def main():
             }
             
         attach_list = [attach_dict]
+        log_message('info', attach_list)
 
         notice_message(token, channel, attach_list)
         log_message("info", "Slack 메세지 전송 완료")
