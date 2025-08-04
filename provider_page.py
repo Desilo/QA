@@ -98,7 +98,7 @@ class Provider_Page:
         upload_area = self.driver.find_element(By.CSS_SELECTOR, '#root > div.Layout_Container__Nzz07 > div.Layout_HeaderContentContainer__LMWZ7 > div.Layout_ContentContainer__FdIQP.Layout_Scrollable__Ti0QR > div > div > div.DataAssetUploadDragAndDrop_Container__ER86Q > div:nth-child(2) > input[type=file]')
         self.driver.execute_script("arguments[0].style.display = 'block';", upload_area)
         
-        file_path = r'C:\Users\WoojaeYang\Desktop\auto\dcr_e2e\hospital.csv'
+        file_path = r'/home/ywj/venv-auto/dcr_e2e/hospital.csv'
         
         upload_area.send_keys(file_path)
       
@@ -111,7 +111,7 @@ class Provider_Page:
         upload_area = self.driver.find_element(By.CSS_SELECTOR, '#root > div.Layout_Container__Nzz07 > div.Layout_HeaderContentContainer__LMWZ7 > div.Layout_ContentContainer__FdIQP.Layout_Scrollable__Ti0QR > div > div > div.DataAssetUploadDragAndDrop_Container__ER86Q > div:nth-child(2) > input[type=file]')
         self.driver.execute_script("arguments[0].style.display = 'block';", upload_area)
         
-        file_path = r'C:\Users\WoojaeYang\Desktop\auto\dcr_e2e\main4.csv'
+        file_path = r'/home/ywj/venv-auto/dcr_e2e/main4.csv'
         
         upload_area.send_keys(file_path)
     
