@@ -115,7 +115,7 @@ def oncall_01(driver, wait, project):
     
     result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/table/tbody/tr/td/div'
     log_message('info', 'On-call #01 START')
-    query_01 = 'SELECT COUNT(*) \nFROM provider1.main4'
+    query_01 = 'SELECT COUNT(*) \nFROM provider1.MAIN'
     proj_name = 'YWJ'
 
     # Asker

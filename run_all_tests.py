@@ -650,7 +650,7 @@ def scene_09(driver, wait, provider, admin, project):
     
     result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div[2]/div'
     log_message('info', 'DCR_scenario_#9_Start ===========================================')
-    da_name_09 = f'AUTO_{today_date}_main4_{scene_num}-'
+    da_name_09 = f'AUTO_{today_date}_MAIN_{scene_num}-'
             
 
     # Data-registry
@@ -715,7 +715,7 @@ def scene_10(driver, wait, provider, admin, project):
     
     result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div[2]/div'
     log_message('info', 'DCR_scenario_#10_Start ===========================================')
-    da_name_10 = f'AUTO_{today_date}_main4_{scene_num}'
+    da_name_10 = f'AUTO_{today_date}_MAIN_{scene_num}'
 
     # Data-registry
     try:
@@ -778,7 +778,7 @@ def scene_11(driver, wait, provider, admin, project):
     
     result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div[2]/div'
     log_message('info', 'DCR_scenario_#11_Start ===========================================')
-    da_name_11 = f'AUTO_{today_date}_main4_{scene_num}'
+    da_name_11 = f'AUTO_{today_date}_MAIN_{scene_num}'
     results = []
     
     # Data-registry
