@@ -362,10 +362,10 @@ class Project_Page:
         time_col.click()
         time.sleep(2)
         
-        # 데이터 에셋 선택
-        da_select = self.driver.find_element(By.XPATH, f'//div[contains(text(),"{da_name}")]')
-        da_select.click()
-        time.sleep(2)
+        ## 데이터 에셋 선택
+        #da_select = self.driver.find_element(By.XPATH, f'//div[contains(text(),"{da_name}")]')
+        #da_select.click()
+        #time.sleep(2)
         
         # TIME 컬럼 선택
         self.driver.find_element(By.XPATH, 
