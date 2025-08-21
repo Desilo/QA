@@ -219,7 +219,7 @@ def scene_02(driver, wait, provider, admin, project):
 def scene_03(driver, wait, provider, admin, project):
     time.sleep(2)
     scene_num = 'no03'
-    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/div[2]/table/tbody/tr/td'
+    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[3]/div/div/div/div/div[4]/div[2]/div' ### p-value
     print(f"▶ {scene_num} 시작 ===========================================")
     
     log_message('info', 'DCR_scenario_#3_Start ===========================================')
