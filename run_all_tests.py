@@ -81,7 +81,7 @@ def log_message(level, message):
 def scene_01(driver, wait, provider, admin, project):
     time.sleep(2)
     scene_num = 'no01'
-    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/table/tbody/tr/td'
+    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/div[2]/table/tbody/tr/td'        
     print(f"▶ {scene_num} 시작 ===========================================")
 
     log_message('info', 'DCR_scenario_#1_Start -----')
@@ -141,7 +141,7 @@ def scene_01(driver, wait, provider, admin, project):
 def scene_02(driver, wait, provider, admin, project):
     time.sleep(2)
     scene_num = 'no02'
-    result_xpath02 = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/table/tbody/tr/td'
+    result_xpath02 = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/div[2]/table/tbody/tr/td'
     print(f"▶ {scene_num} 시작 ===========================================")
     
     log_message('info', 'DCR_scenario_#2_Start ===========================================')
@@ -219,7 +219,7 @@ def scene_02(driver, wait, provider, admin, project):
 def scene_03(driver, wait, provider, admin, project):
     time.sleep(2)
     scene_num = 'no03'
-    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div[1]/table/tbody/tr/td[2]/div'
+    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/div[2]/table/tbody/tr/td'
     print(f"▶ {scene_num} 시작 ===========================================")
     
     log_message('info', 'DCR_scenario_#3_Start ===========================================')
@@ -282,7 +282,7 @@ def scene_04(driver, wait, provider, admin, project):
     time.sleep(2)
     scene_num = 'no04'
     print(f"▶ {scene_num} 시작 ===========================================")
-    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div[1]/table/tbody/tr[2]/td[2]/div'
+    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/div[2]/table/tbody/tr/td'
     log_message('info', 'DCR_scenario_#4_Start ===========================================')
     da_name_04 = f'AUTO_{today_date}_hospital_{scene_num}'
     
@@ -346,7 +346,7 @@ def scene_05(driver, wait, provider, admin, project):
     scene_num = 'no05'
     print(f"▶ {scene_num} 시작 ===========================================")
     
-    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/table/tbody/tr/td'
+    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/div[2]/table/tbody/tr/td'
     log_message('info', 'DCR_scenario_#5_Start ===========================================')
     da_name_05 = f'AUTO_{today_date}_hospital_{scene_num}'
     query_05 = f'SELECT SUM(provider1.{da_name_05}.나이) \nFROM provider1.{da_name_05}'
@@ -406,7 +406,7 @@ def scene_06(driver, wait, provider, admin, project):
     scene_num = 'no06'
     print(f"▶ {scene_num} 시작 ===========================================")
     
-    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/table/tbody/tr/td'
+    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/div[2]/table/tbody/tr/td'
     log_message('info', 'DCR_scenario_#6_Start')
     da_name_06 = f'AUTO_{today_date}_hospital_{scene_num}'
     query_06 = f'SELECT COUNT(*) \nFROM provider1.{da_name_06}'
@@ -483,7 +483,7 @@ def scene_07(driver, wait, provider, admin, project):
     scene_num = 'no07'
     print(f"▶ {scene_num} 시작 ===========================================")
     
-    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/table/tbody/tr/td'
+    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/div/div[2]/table/tbody/tr/td'
     log_message('info', 'DCR_scenario_#7_Start ===========================================')
     da_name_07 = f'AUTO_{today_date}_hospital_{scene_num}'
     query_07 = f'SELECT COUNT(*) \nFROM provider1.{da_name_07}'
