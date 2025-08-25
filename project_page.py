@@ -532,4 +532,57 @@ class Project_Page:
 
    
         
+    # Describtive Statistics
+    def describe(self, da_name):
+        self.switch_tab()
+        time.sleep(2)
+        
+        # 드롭다운 선택
+        dropdown = self.wait.until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[1]/div[2]/div[3]/div[2]/div')))
+        dropdown.click()
+        time.sleep(2)
+        
+        # COX 선택
+        kpe = self.driver.find_element(By.XPATH, '//div[contains(text(), "Cox")]')
+        kpe.click()
+        time.sleep(2)
+        
+        # from 절
+        from_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[2]/div')
+        from_btn.click()
+        time.sleep(2)
+        
+        provider1_btn = self.driver.find_element(By.XPATH, '//div[contains(text(),"provider1")]')
+        provider1_btn.click()
+        time.sleep(2)
+        
+        # 데이터 에셋 선택
+        da_select = self.driver.find_element(By.XPATH, f'//div[contains(text(),"{da_name}")]')
+        da_select.click()
+        time.sleep(2)
+        
+        da_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[2]/div[2]/div/div[3]/div/div[2]/button')
+        da_ok_btn.click()
+        time.sleep(2)
 
+        #STRATA 컬럼
+        strata_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div')
+        strata_btn.click()
+        time.sleep(2)
+        
+        self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div').click()
+        strata_elem = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "STATIN")]')))
+        strata_elem.click()
+        time.sleep(2)  
+        
+        #COLUMN 컬럼
+        column_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div')
+        column_btn.click()
+        time.sleep(2)
+        
+        self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div')
+        column_elem = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "G1E_LDL")]')))
+        column_elem.click()
+        
+        ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[3]/div/div[2]/button')
+        ok_btn.click()
