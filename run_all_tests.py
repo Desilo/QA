@@ -878,6 +878,84 @@ def scene_11(driver, wait, provider, admin, project):
 
     return "\n".join(results)
 
+
+#%%  ########################## SCENARIO #12 ##########################
+
+def scene_12(driver, wait, provider, admin, project):
+    time.sleep(2)
+    scene_num = 'no12'
+    print(f"▶ {scene_num} 시작 ===========================================")
+    
+    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[2]/table/tbody/tr[2]/td[3]'
+    log_message('info', 'DCR_scenario_#12_Start ===========================================')
+    da_name_12 = f'AUTO_{today_date}_MAIN_{scene_num}'
+            
+    # Data-registry
+    try:
+        log_message('info', 'DCR_scenario_#12 - Data-registry Start ===========================================')
+        print('  Data-registry Start -----')
+        time.sleep(2)
+        provider.move_to_data_registration()
+        provider.data_registration(da_name_08, today_date)
+        # 시나리오8 에서는 데이터 등록 자동승인 OFF
+        provider.click_approval_box()
+        provider.upload_file()
+        provider.register()
+        
+    finally:
+        log_message('info', 'DCR_scenario_#12 - Data-registry Done ===========================================')
+    
+    # Admin
+    try:
+        log_message('info', 'DCR_scenario_#12 - Admin Start ===========================================')
+        print('  Admin Start -----')
+        time.sleep(2)
+        admin.move_to_dat_space()
+        admin.add_ds(today_date, scene_num)
+        admin.assign(today_date)
+        admin.add_da(scene_num)
+        admin.add_analyst()
+        
+    finally:
+        log_message('info', 'DCR_scenario_#12 - Admin Done ===========================================')
+        
+    # Asker
+    try:
+        log_message('info', 'DCR_scenario_#12 - Asker Start ===========================================')
+        print('  Asker Start -----')
+        project.create_project(today_date, scene_num)
+        project.create_workflow(today_date, scene_num)
+        project.describe(da_name_12)
+        project.start_workflow()
+        time.sleep(3)  
+    
+    finally:
+        log_message('info', 'DCR_scenario_#12 - Asker Done ===========================================')
+        
+    # Data-registry
+    try:
+        log_message('info', 'DCR_scenario_#12 - Query Approval Start ===========================================')
+        print('  Query Approval Start -----')
+        provider.enter_query_approval(da_name_12)
+        provider.reject_query()
+    
+    finally:
+        log_message('info', 'DCR_scenario_#12 - Query Approval Done ===========================================')
+    
+    # Asker
+    try:
+        log_message('info', 'DCR_scenario_#12 - Asker02 Start ===========================================')
+        print('  Asker02 Start -----')
+        result = project.cehck_query_result(result_xpath)
+        log_message('info',  f'Describtive Statistic P-value : {result}')
+    finally:
+        log_message('info', 'DCR_scenario_#12 - Asker02 Done ===========================================')
+        
+    return result
+
+    time.sleep(1)
+    
+    
 #%% ########################## slack ##########################
 
 
@@ -1024,6 +1102,10 @@ def main():
         result11 = scene_11(driver, wait, provider, admin, project)
         log_message("info", "시나리오11 완료")
         
+        log_message("info", "시나리오12 시작")
+        result12 = scene_12(driver, wait, provider, admin, project)
+        log_message("info", "시나리오12 완료")
+        
 
         # 봇 메세지 내부 내용
         attach_dict = {
@@ -1050,7 +1132,9 @@ def main():
         == [Scenario_#9] ==============
             {result09} 
         == [Scenario_#11] ==============
-            {result11}     
+            {result11} 
+        == [Scenario_#12] ==============
+            {result12}     
             ``` """
             }
             
