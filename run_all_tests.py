@@ -933,7 +933,7 @@ def scene_12(driver, wait, provider, admin, project):
         try:
             describe_result = wait.until(EC.presence_of_element_located(( By.XPATH,  result_xpath)))
             log_message('info',  f'Stats_P-value : {describe_result}')
-            return 'CDescriptive Statistics OK'
+            return 'Descriptive Statistics OK'
         except TimeoutException:
             return 'Descriptive Statistics NG'
     
