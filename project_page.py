@@ -641,9 +641,6 @@ class Project_Page:
         self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div').click()
         height_btn01 = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "AGE")]')))
         height_btn01.click()
-        time.sleep(1)
-        height_btn02 = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "STATIN")]')))
-        height_btn02.click()
         time.sleep(2)
         
         independent_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div/div[3]/div/div[2]/button')
