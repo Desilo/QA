@@ -927,33 +927,18 @@ def scene_12(driver, wait, provider, admin, project):
         project.create_workflow(today_date, scene_num)
         project.describe(da_name_12)
         project.start_workflow()
-        time.sleep(3)  
+        time.sleep(30)    
+            
+        #쿼리 결과 확인
+        try:
+            describe_result = wait.until(EC.presence_of_element_located(( By.XPATH,  result_xpath)))
+            log_message('info',  f'Stats_P-value : {describe_result}')
+            return 'CDescriptive Statistics OK'
+        except TimeoutException:
+            return 'Descriptive Statistics NG'
     
     finally:
         log_message('info', 'DCR_scenario_#12 - Asker Done ===========================================')
-        
-    # Data-registry
-    try:
-        log_message('info', 'DCR_scenario_#12 - Query Approval Start ===========================================')
-        print('  Query Approval Start -----')
-        provider.enter_query_approval(da_name_12)
-        provider.reject_query()
-    
-    finally:
-        log_message('info', 'DCR_scenario_#12 - Query Approval Done ===========================================')
-    
-    # Asker
-    try:
-        log_message('info', 'DCR_scenario_#12 - Asker02 Start ===========================================')
-        print('  Asker02 Start -----')
-        result = project.cehck_query_result(result_xpath)
-        log_message('info',  f'Describtive Statistic P-value : {result}')
-    finally:
-        log_message('info', 'DCR_scenario_#12 - Asker02 Done ===========================================')
-        
-    return result
-
-    time.sleep(1)
     
     
 #%% ########################## slack ##########################
