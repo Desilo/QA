@@ -579,7 +579,7 @@ class Project_Page:
         
         strata_elem_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/div[3]/div/div[2]/button')
         strata_elem_ok_btn.click()
-        time.slee(1)
+        time.sleep(1)
         
         #COLUMN 컬럼
         column_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div')
