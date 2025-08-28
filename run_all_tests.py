@@ -896,7 +896,7 @@ def scene_12(driver, wait, provider, admin, project):
         print('  Data-registry Start -----')
         time.sleep(2)
         provider.move_to_data_registration()
-        provider.upload_file_main4(da_name_12, today_date)
+        provider.upload_file_main4()
         # 시나리오8 에서는 데이터 등록 자동승인 OFF
         provider.click_approval_box()
         provider.upload_file()
