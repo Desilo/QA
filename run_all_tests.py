@@ -896,7 +896,7 @@ def scene_12(driver, wait, provider, admin, project):
         print('  Data-registry Start -----')
         time.sleep(2)
         provider.move_to_data_registration()
-        provider.data_registration(da_name_10, today_date)
+        provider.data_registration(da_name_12, today_date)
         provider.upload_file_main4()
         provider.register()
         
