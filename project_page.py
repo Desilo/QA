@@ -587,7 +587,7 @@ class Project_Page:
         time.sleep(2)
         
         self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div')
-        column_elem = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "G1E_LDL")]')))
+        column_elem = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "G1E_BP_SYS")]')))
         column_elem.click()
         
         ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[3]/div/div[2]/button')
