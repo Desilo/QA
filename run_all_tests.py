@@ -334,7 +334,7 @@ def scene_04(driver, wait, provider, admin, project):
         log_message('info', 'DCR_scenario_#4 - Asker Done ===========================================')
 
 
-    return f'ANOVA_P-value : {result}'
+    return f'Linear Regression R-Squared_Result : {result}'
 
     time.sleep(1)
 
@@ -396,7 +396,7 @@ def scene_05(driver, wait, provider, admin, project):
     finally:
         log_message('info', 'DCR_scenario_#5 - Asker Done ===========================================')
 
-    return f'ANOVA_P-value : {result}'
+    return f'Query Result : {result}'
 
 
 #%%  ########################## SCENARIO #06 ##########################
@@ -471,7 +471,7 @@ def scene_06(driver, wait, provider, admin, project):
     finally:
         log_message('info', 'DCR_scenario_#6 - Garbage-collection Done ===========================================')
 
-    return f'Query_Result : {result}'
+    return f'Garbage Collection Result : {result}'
 
     time.sleep(1)
     
@@ -558,7 +558,7 @@ def scene_07(driver, wait, provider, admin, project):
     finally:
         log_message('info', 'DCR_scenario_#7 - Garbage-collection Done ===========================================')
     
-    return f'Query_Result : {result}'
+    return f'Garbage Collection Result : {result}'
     
     time.sleep(1)
 
@@ -879,7 +879,7 @@ def scene_11(driver, wait, provider, admin, project):
     return "\n".join(results)
 
 
-#%%  ########################## SCENARIO #12 ##########################
+#%%  ########################## SCENARIO #12 ########################## Describtive Statistics
 
 def scene_12(driver, wait, provider, admin, project):
     time.sleep(2)
@@ -926,18 +926,16 @@ def scene_12(driver, wait, provider, admin, project):
         project.describe(da_name_12)
         project.start_workflow()
         time.sleep(30)    
-            
+        
         #쿼리 결과 확인
-        try:
-            describe_result = wait.until(EC.presence_of_element_located(( By.XPATH,  result_xpath)))
-            log_message('info',  f'Stats_P-value : {describe_result}')
-            return f'Stats_P-value : {describe_result}'
-        except TimeoutException:
-            return 'Descriptive Statistics NG'
+        result = project.cehck_query_result(result_xpath)
+        log_message('info',  f'P-value : {result}')
     
     finally:
         log_message('info', 'DCR_scenario_#12 - Asker Done ===========================================')
     
+    return f'Describtive P-value : {result}'
+
     
 #%% ########################## slack ##########################
 
