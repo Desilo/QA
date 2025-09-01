@@ -544,7 +544,7 @@ class Project_Page:
         time.sleep(2)
         
         # COX 선택
-        kpe = self.driver.find_element(By.XPATH, '//div[contains(text(), "Cox")]')
+        kpe = self.driver.find_element(By.XPATH, '//div[contains(text(), "Describtive")]')
         kpe.click()
         time.sleep(2)
         
