@@ -543,8 +543,8 @@ class Project_Page:
         dropdown.click()
         time.sleep(2)
         
-        # COX 선택
-        kpe = self.driver.find_element(By.XPATH, '//div[contains(text(), "Describtive")]')
+        # Descriptive Statistics 선택
+        kpe = self.driver.find_element(By.XPATH, '//div[contains(text(), "Descriptive Statistics")]')
         kpe.click()
         time.sleep(2)
         
