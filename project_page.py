@@ -586,7 +586,7 @@ class Project_Page:
         column_btn.click()
         time.sleep(2)
         
-        self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div')
+        self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div').click()
         column_elem = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "G1E_BP_SYS")]')))
         column_elem.click()
         
