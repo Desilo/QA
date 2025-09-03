@@ -936,6 +936,65 @@ def scene_12(driver, wait, provider, admin, project):
     
     return f'Describtive P-value : {result}'
 
+
+#%%  ########################## SCENARIO #13 ##########################  Logistic Regression
+
+def scene_13(driver, wait, provider, admin, project):
+    time.sleep(2)
+    scene_num = 'no13'
+    print(f"▶ {scene_num} 시작 ===========================================")
+    
+    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[4]/div[3]/div[2]/div[2]/div[2]'
+    log_message('info', 'DCR_scenario_#13_Start ===========================================')
+    da_name_13 = f'AUTO_{today_date}_MAIN_{scene_num}'
+            
+    # Data-registry
+    try:
+        log_message('info', 'DCR_scenario_#13 - Data-registry Start ===========================================')
+        print('  Data-registry Start -----')
+        time.sleep(2)
+        provider.move_to_data_registration()
+        provider.data_registration(da_name_13, today_date)
+        provider.upload_file_main4()
+        provider.register()
+        
+    finally:
+        log_message('info', 'DCR_scenario_#13 - Data-registry Done ===========================================')
+    
+    # Admin
+    try:
+        log_message('info', 'DCR_scenario_#13 - Admin Start ===========================================')
+        print('  Admin Start -----')
+        time.sleep(2)
+        admin.move_to_dat_space()
+        admin.add_ds(today_date, scene_num)
+        admin.assign(today_date)
+        admin.add_da(scene_num)
+        admin.add_analyst()
+        
+    finally:
+        log_message('info', 'DCR_scenario_#13 - Admin Done ===========================================')
+        
+    # Asker
+    try:
+        log_message('info', 'DCR_scenario_#13 - Asker Start ===========================================')
+        print('  Asker Start -----')
+        project.create_project(today_date, scene_num)
+        project.create_workflow(today_date, scene_num)
+        project.set_logit(da_name_13)
+        project.start_workflow()
+        time.sleep(30)  
+        
+        #쿼리 결과 확인
+        result = project.cehck_query_result(result_xpath)
+        log_message('info',  f'const value : {result}')
+    
+    finally:
+        log_message('info', 'DCR_scenario_#13 - Asker Done ===========================================')
+    
+    return f'Logisitc const value : {result}'
+        
+        
     
 #%% ########################## slack ##########################
 

@@ -651,3 +651,61 @@ class Project_Page:
         independent_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div/div[3]/div/div[2]/button')
         independent_ok_btn.click()
         time.sleep(2)
+        
+        
+    # Paired t-Test
+    def set_logit(self, da_name):
+        self.switch_tab()
+        time.sleep(2)
+        
+        # 드롭다운 선택
+        dropdown = self.wait.until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[1]/div[2]/div[3]/div[2]/div')))
+        dropdown.click()
+        
+        # T검정 선택
+        linear = self.driver.find_element(By.XPATH, '//div[contains(text(), "Paired t-Test")]')
+        linear.click()
+        
+        # from절
+        from_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[4]/div[2]/div')
+        from_btn.click()
+        time.sleep(2)
+        
+        provider1_btn = self.driver.find_element(By.XPATH, '//div[contains(text(),"provider1")]')
+        provider1_btn.click()
+        
+        # 데이터 에셋 선택
+        da_select = self.driver.find_element(By.XPATH, f'//div[contains(text(),"{da_name}")]')
+        da_select.click()
+        time.sleep(3)
+        
+        ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[4]/div[2]/div[2]/div/div[3]/div/div[2]/button')
+        ok_btn.click()
+        time.sleep(2)
+        
+        # Variable 항목 선택
+        var_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div')
+        var_btn.clikc()
+        time.sleep(2)
+        
+        self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div[1]/div').click()
+        age_btn03 = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "AGE")]')))
+        age_btn03.click()
+        time.sleep(2)
+        
+        self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div').click()
+        container_div = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]')
+        max_scrolls = 10
+        center_scroll = True
+        
+        
+        
+        dth_btn02 = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "DTH")]')))
+        dth_btn02.click()
+        time.sleep(2)
+        
+        var_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/div/div[3]/div[2]/div[2]/button')
+        var_ok_btn.click()
+        
+        
+        
