@@ -695,10 +695,25 @@ class Project_Page:
         
         self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div').click()
         container_div = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div[2]/div/div[2]/div[2]')
-        max_scrolls = 10
-        center_scroll = True
         
+        max_scrolls = 20 # 스크롤 횟수 제한
+        center_scroll = True 
+        target = None # 찾은 요소를 루프 밖에서도 쓰기 위해 보관
+        rel_xpath = '//div[contains(normalize-space(.), "CHOL")]'
         
+        for a in range(max_scrolls):
+            matches = container_div.find_elements(By.XPATH, rel_xpath)
+            if matches:
+                target = matches[0]
+                driver.execute_script("arguments[0].scrollIntoView({block:'center'});", target)
+                break
+            if not target:
+                raise Exception("컨테이너에서 'GLG'를 포함한 div를 찾지 못했습니다.")
+        
+        try:
+            target.click()
+        except Exception:
+            driver.execute_script("arguments[0].click();", target)
         
         dth_btn02 = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "DTH")]')))
         dth_btn02.click()
