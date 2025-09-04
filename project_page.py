@@ -608,8 +608,9 @@ class Project_Page:
         linear.click()
         
         # from절
-        from_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[4]/div[2]/div')
+        from_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div[2]/div')
         from_btn.click()
+        print('from select')
         time.sleep(2)
         
         provider1_btn = self.driver.find_element(By.XPATH, '//div[contains(text(),"provider1")]')
