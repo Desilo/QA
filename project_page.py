@@ -549,7 +549,7 @@ class Project_Page:
         time.sleep(2)
         
         # from 절
-        from_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div/div[2]/div')
+        from_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div')
         from_btn.click()
         time.sleep(2)
         
@@ -604,12 +604,17 @@ class Project_Page:
         dropdown.click()
         
         # 로지스틱 회귀 선택
-        linear = self.driver.find_element(By.XPATH, '//div[contains(text(), "Logistic")]')
-        linear.click()
+        logist= self.driver.find_element(By.XPATH, '//div[contains(text(), "Logistic")]')
+        logist.click()
         
         # from절
+        from_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div[2]/div')
+        from_btn.click()
+        time.sleep(2)
+        
         provider1_btn = self.driver.find_element(By.XPATH, '//div[contains(text(),"provider1")]')
         provider1_btn.click()
+        time.sleep(2)
         
         # 데이터 에셋 선택
         da_select = self.driver.find_element(By.XPATH, f'//div[contains(text(),"{da_name}")]')
@@ -711,7 +716,7 @@ class Project_Page:
             matches = container_div.find_elements(By.XPATH, rel_xpath)
             if matches:
                 target = matches[0]
-                driver.execute_script("arguments[0].scrollIntoView({block:'center'});", target)
+                self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});", target)
                 break
             if not target:
                 raise Exception("컨테이너에서 'GLG'를 포함한 div를 찾지 못했습니다.")
@@ -719,7 +724,7 @@ class Project_Page:
         try:
             target.click()
         except Exception:
-            driver.execute_script("arguments[0].click();", target)
+            self.driver.execute_script("arguments[0].click();", target)
         
         dth_btn02 = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "DTH")]')))
         dth_btn02.click()
