@@ -604,7 +604,7 @@ class Project_Page:
         dropdown.click()
         
         # 로지스틱 회귀 선택
-        logist= self.driver.find_element(By.XPATH, '//div[contains(text(), "Logistic")]')
+        logist = self.driver.find_element(By.XPATH, '//div[contains(text(), "Logistic Regression")]')
         logist.click()
         
         # from절
