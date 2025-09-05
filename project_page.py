@@ -621,7 +621,7 @@ class Project_Page:
         da_select.click()
         time.sleep(3)
         
-        ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[4]/div[2]/div[2]/div/div[3]/div/div[2]/button')
+        ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div[2]/div[2]/div/div[3]/div/div[2]/button')
         ok_btn.click()
         time.sleep(3)
                                                      
