@@ -665,7 +665,7 @@ class Project_Page:
         
         
     # Paired t-Test
-    def set_logit(self, da_name):
+    def set_ttest(self, da_name):
         self.switch_tab()
         time.sleep(2)
         
