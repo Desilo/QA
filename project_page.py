@@ -608,15 +608,13 @@ class Project_Page:
         linear.click()
         
         # from절
-        from_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div[2]/div')
-        from_btn.click()
-        print('from select')
-        time.sleep(2)
-        
         provider1_btn = self.driver.find_element(By.XPATH, '//div[contains(text(),"provider1")]')
         provider1_btn.click()
-        print('provider1 select')
-        time.sleep(2)
+        
+        # 데이터 에셋 선택
+        da_select = self.driver.find_element(By.XPATH, f'//div[contains(text(),"{da_name}")]')
+        da_select.click()
+        time.sleep(3)
         
         # 데이터 에셋 선택
         da_select = self.driver.find_element(By.XPATH, f'//div[contains(text(),"{da_name}")]')
