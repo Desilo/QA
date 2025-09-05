@@ -621,32 +621,22 @@ class Project_Page:
         da_select.click()
         time.sleep(3)
         
-        # 데이터 에셋 선택
-        da_select = self.driver.find_element(By.XPATH, f'//div[contains(text(),"{da_name}")]')
-        da_select.click()
-        print('da select')
-        time.sleep(3)
-        
         ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[4]/div[2]/div[2]/div/div[3]/div/div[2]/button')
         ok_btn.click()
-        print('da_ok_click')
         time.sleep(3)
                                                      
         # 종속변수
         dependent = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div')
         dependent.click()
-        print('dependent click')
         time.sleep(2)
         
         self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div').click()
         dth_btn = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "DTH")]')))
         dth_btn.click()
-        print('dth click')
         time.sleep(3)
         
         dependent_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/div/div[3]/div/div[2]/button')
         dependent_ok_btn.click()
-        print('dependent_ok click')
         time.sleep(3)
         
         # 독립변수
