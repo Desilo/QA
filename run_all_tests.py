@@ -1206,6 +1206,10 @@ def main():
         log_message("info", "시나리오13 시작")
         result13 = scene_13(driver, wait, provider, admin, project)
         log_message("info", "시나리오13 완료")
+        
+        log_message("info", "시나리오14 시작")
+        result14 = scene_14(driver, wait, provider, admin, project)
+        log_message("info", "시나리오14 완료")
 
         # 봇 메세지 내부 내용
         attach_dict = {
@@ -1237,6 +1241,8 @@ def main():
             {result12}     
         == [Scenario_#13] ==============
             {result13}     
+        == [Scenario_#14] ==============
+            {result14}   
             ``` """
             }
             
