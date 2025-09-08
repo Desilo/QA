@@ -668,7 +668,7 @@ class Project_Page:
         linear.click()
         
         # from절
-        from_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[4]/div[2]/div')
+        from_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div')
         from_btn.click()
         time.sleep(2)
         
@@ -709,7 +709,7 @@ class Project_Page:
                 self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});", target)
                 break
             if not target:
-                raise Exception("컨테이너에서 'GLG'를 포함한 div를 찾지 못했습니다.")
+                raise Exception("'CHOL'를 포함한 div를 찾지 못했습니다.")
         
         try:
             target.click()

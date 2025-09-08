@@ -995,6 +995,63 @@ def scene_13(driver, wait, provider, admin, project):
     return f'Logisitc const value : {result}'
         
         
+#%%  ########################## SCENARIO #14 ##########################  Paired T-test
+
+def scene_14(driver, wait, provider, admin, project):
+    time.sleep(2)
+    scene_num = 'no14'
+    print(f"▶ {scene_num} 시작 ===========================================")
+    
+    result_xpath = '/html/body/div[1]/div[1]/div[3]/div[3]/div/div/div[3]/div/div/div[3]/div[2]/div'
+    log_message('info', 'DCR_scenario_#14_Start ===========================================')
+    da_name_14 = f'AUTO_{today_date}_MAIN_{scene_num}'
+            
+    # Data-registry
+    try:
+        log_message('info', 'DCR_scenario_#14 - Data-registry Start ===========================================')
+        print('  Data-registry Start -----')
+        time.sleep(2)
+        provider.move_to_data_registration()
+        provider.data_registration(da_name_14, today_date)
+        provider.upload_file_main4()
+        provider.register()
+        
+    finally:
+        log_message('info', 'DCR_scenario_#14 - Data-registry Done ===========================================')
+    
+    # Admin
+    try:
+        log_message('info', 'DCR_scenario_#14 - Admin Start ===========================================')
+        print('  Admin Start -----')
+        time.sleep(2)
+        admin.move_to_dat_space()
+        admin.add_ds(today_date, scene_num)
+        admin.assign(today_date)
+        admin.add_da(scene_num)
+        admin.add_analyst()
+        
+    finally:
+        log_message('info', 'DCR_scenario_#14 - Admin Done ===========================================')
+        
+    # Asker
+    try:
+        log_message('info', 'DCR_scenario_#14 - Asker Start ===========================================')
+        print('  Asker Start -----')
+        project.create_project(today_date, scene_num)
+        project.create_workflow(today_date, scene_num)
+        project.set_ttest(da_name_14)
+        project.start_workflow()
+        time.sleep(30)  
+        
+        #쿼리 결과 확인
+        result = project.cehck_query_result(result_xpath)
+        log_message('info',  f'T-statistic : {result}')
+    
+    finally:
+        log_message('info', 'DCR_scenario_#14 - Asker Done ===========================================')
+    
+    return f'T-statistic : {result}'
+        
     
 #%% ########################## slack ##########################
 
