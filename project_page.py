@@ -686,7 +686,7 @@ class Project_Page:
         
         # Variable 항목 선택
         var_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div')
-        var_btn.clikc()
+        var_btn.click()
         time.sleep(2)
         
         self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div[1]/div/div[2]/div[1]/div').click()
