@@ -715,10 +715,7 @@ class Project_Page:
             target.click()
         except Exception:
             self.driver.execute_script("arguments[0].click();", target)
-        
-        dth_btn02 = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "DTH")]')))
-        dth_btn02.click()
-        time.sleep(2)
+        time.sleep(3)
         
         var_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/div/div[3]/div[2]/div[2]/button')
         var_ok_btn.click()
