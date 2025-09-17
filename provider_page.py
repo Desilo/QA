@@ -130,7 +130,22 @@ class Provider_Page:
         register_btn = self.wait.until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[1]/div[3]/div[1]/div[3]/div[2]/div/button')))
         register_btn.click()
         time.sleep(3)
+    
+    
+    # MAIN 파일 등록
+    def register_main(self):
+        self.switch_tab()
+        time.sleep(2)
         
+        # 다음 버튼 클릭
+        next_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[1]/div[3]/div/div/button')
+        next_btn.click()
+        time.sleep(2)
+        
+        # TIME 컬럼 데이터형식 int로 변경 
+        
+        
+    
         
     # 승인 확인 진입
     def enter_query_approval(self, da_name):

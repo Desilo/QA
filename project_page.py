@@ -369,7 +369,7 @@ class Project_Page:
         
         # TIME 컬럼 선택
         self.driver.find_element(By.XPATH, 
-                                 '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div/div/div').click()    
+                                 '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div/div/div').click()   
         time_elem = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "TIME")]')))
         time_elem.click()
         time.sleep(2)    
