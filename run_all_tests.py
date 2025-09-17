@@ -232,7 +232,7 @@ def scene_03(driver, wait, provider, admin, project):
         time.sleep(2)
         provider.move_to_data_registration()
         provider.data_registration(da_name_03, today_date)
-        provider.upload_file()
+        provider.upload_file_main4()
         provider.register()
 
     finally:
