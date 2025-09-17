@@ -378,19 +378,19 @@ class Project_Page:
         time_elem_ok_btn.click()
         time.sleep(2)
         
-        # 코호트 컬럼 - STATIN
-        cohort_col = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div')
-        cohort_col.click()
+        # GROUP 컬럼 - STATIN
+        group_col = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div')
+        group_col.click()
         time.sleep(2)
         
         self.driver.find_element(By.XPATH, 
-                                 '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div').click()    
-        cohort_elem = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "STATIN")]')))
-        cohort_elem.click()
+                                 '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div/div/div').click()    
+        group_elem = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "STATIN")]')))
+        group_elem.click()
         time.sleep(3)    
             
-        cohort_elem_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[3]/div/div[2]/button')
-        cohort_elem_ok_btn.click()
+        group_elem_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[2]/div[2]/div/div[3]/div/div[2]/button')
+        group_elem_ok_btn.click()
         time.sleep(2)
             
         
