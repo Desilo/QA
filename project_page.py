@@ -358,23 +358,23 @@ class Project_Page:
         time.sleep(2)
         
         # Time 컬럼
-        time_col = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div[2]/div')
+        time_col = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div')
         time_col.click()
         time.sleep(2)
         
         ## 데이터 에셋 선택
         #da_select = self.driver.find_element(By.XPATH, f'//div[contains(text(),"{da_name}")]')
         #da_select.click()
-        #time.sleep(2)
+        #time.sleep(2)    
         
         # TIME 컬럼 선택
         self.driver.find_element(By.XPATH, 
-                                 '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div').click()    
+                                 '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div/div/div').click()    
         time_elem = self.wait.until(EC.presence_of_element_located((By.XPATH, '//div[contains(text(), "TIME")]')))
         time_elem.click()
         time.sleep(2)    
         
-        time_elem_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[2]/button')
+        time_elem_ok_btn = self.driver.find_element(By.XPATH, '/html/body/div/div[1]/div[3]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/div[3]/div/div[2]/button')
         time_elem_ok_btn.click()
         time.sleep(2)
         

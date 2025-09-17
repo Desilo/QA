@@ -641,7 +641,7 @@ def scene_08(driver, wait, provider, admin, project):
     time.sleep(1)
 
 
-#%%  ########################## SCENARIO #09 ##########################
+#%%  ########################## SCENARIO #09 ########################## Kaplan Meier 
 
 def scene_09(driver, wait, provider, admin, project):
     time.sleep(2)
